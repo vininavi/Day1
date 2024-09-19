@@ -1,0 +1,34 @@
+JavaScript is a versatile language that uses objects as a fundamental building block. Whether you’re creating simple data structures or complex applications, understanding how objects work and their internal representation can greatly enhance your coding skills. 
+
+What is an Object in JavaScript?
+
+At its core, an object in JavaScript is a collection of key-value pairs. Keys (or properties) are strings (or Symbols), while values can be of any data type, including other objects, arrays, functions, and more.
+
+Creating Objects :
+
+You can create objects in several ways:
+
+Object Literal Notation:
+
+
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+const alice = new Person("Alice", 30);
+Using Object.create():
+
+Memory Structure
+
+JavaScript engines implement objects as hash tables or similar structures. 
+
+This allows for fast lookups and dynamic property additions. When you create an object, it’s stored in memory, and each property corresponds to an entry in this table.
+
+Property Keys: In JavaScript, property keys are either strings or Symbols. They are stored as references in the hash table.
+
+Property Values: The values can be of any type, and they are stored as references to the actual data.
+
+Object Properties
+
+JavaScript objects can have properties that can be added, modified, or deleted at runtime. You can also define properties with specific characteristics using Object.defineProperty() or Object.defineProperties().
+

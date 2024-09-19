@@ -1,0 +1,43 @@
+HTTP 1.1 vs HTTP2 
+
+•	In the ever-evolving landscape of web technologies, HTTP (Hypertext Transfer Protocol) plays a crucial role in how we access and transfer data on the internet. 
+•	As we have moved from HTTP/1.1 to HTTP/2, significant changes have been made to improve performance, security, and efficiency. 
+
+1. Connection Management
+
+HTTP/1.1: 
+   *  Each request/response cycle typically requires a separate connection. Although persistent connections (using keep-alive) allow multiple requests to be sent over a single connection, browsers often still open multiple connections to the same server to fetch resources simultaneously. This can lead to network congestion and increased latency.
+HTTP/2 :
+
+   * Allowing multiple requests and responses to be sent over a single connection simultaneously. This reduces the overhead of managing multiple connections and improves the utilization of the network. As a result, page load times are faster, especially for resource-heavy websites.
+
+2. Header Compression
+
+HTTP/1.1
+   * It can lead to large overheads, especially when many small requests are made. Each request includes the same headers, which can slow down performance.
+HTTP/2
+   * A header compression mechanism that reduces the size of headers significantly. By compressing headers and using a single connection, HTTP/2 minimizes the amount of data sent over the network, enhancing performance, particularly for applications with numerous small requests.
+
+3. Server Push
+HTTP/1.1
+   * A server can only respond to requests that have been explicitly made by the client. This means that if a client requests a webpage, the server must wait for subsequent requests to send additional resources like images, CSS, or JavaScript.
+HTTP/2
+   * Introduces a feature called "server push," which allows the server to send resources to the client proactively. When a client requests a webpage, the server can anticipate the resources needed and send them without waiting for additional requests. This can significantly reduce loading times for websites.
+
+4. Binary Protocol vs. Text Protocol
+HTTP/1.1
+   * It is a text-based protocol, meaning all communication is done using human-readable text. While this makes it easy to debug, it also introduces overhead due to the need for parsing and formatting.
+HTTP/2
+   * On the other hand, uses a binary protocol, which is more efficient for computers to parse and handle. This binary framing allows for better performance, as it reduces the complexity and overhead associated with text parsing.
+
+5. Prioritization
+HTTP/1.1
+   * There is no built-in mechanism for prioritizing requests. All requests are treated equally, which can lead to issues where critical resources take longer to load if they are blocked by less important ones.
+HTTP/2
+   * Allows clients to assign priorities to requests, enabling the server to handle the most important resources first. This prioritization can lead to a more efficient loading process, ensuring that users see critical content as quickly as possible.
+
+6. Security Enhancements
+HTTP/1.1
+  * It can support encryption through HTTPS, it is not mandated. Many sites still run on HTTP, which exposes users to security vulnerabilities.
+HTTP/2
+  * It is often used with HTTPS, which encrypts the data exchanged between the client and server. Although HTTP/2 can technically run over non-secure connections, major browsers only support it over HTTPS, reinforcing a more secure internet.
